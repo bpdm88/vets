@@ -1,0 +1,1 @@
+<h5 class="mb-1">{{ $owner->fullAddress() }}</h5>

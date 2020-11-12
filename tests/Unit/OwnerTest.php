@@ -41,9 +41,9 @@ class OwnerTest extends TestCase
         $owner->postcode = "BS3 9TH";
         $owner->save();
         
-        $this->assertTrue(true === Owner::doesEmailExist("test@gmail.com"));
+        $this->assertTrue(Owner::doesEmailExist("test@gmail.com"));
 
-        $this->assertTrue(false === Owner::doesEmailExist("newemail@gmail.com"));
+        $this->assertFalse(Owner::doesEmailExist("newemail@gmail.com"));
 
     }
 }
