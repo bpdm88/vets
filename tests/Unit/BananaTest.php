@@ -7,11 +7,6 @@ use App\Models\Owner;
 
 class BananaTest extends TestCase
 {
-    /**
-     * A basic unit test example.
-     *
-     * @return void
-     */
     public function testExample()
     {
         $this->assertSame(Owner::haveWeBananas(1), "Yes we have 1 banana");
