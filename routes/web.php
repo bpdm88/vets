@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Owners;
+use App\Http\Controllers\Home;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +17,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [Home::class, "index"]);
+
+Route::get('/owners', [Owners::class, "index"]);
+
+Route::get("/owners/{owner}", [Owners::class, "show"]);
+
+
+Route::get('/about', function () {
+    return view('about');
 });
+

@@ -3,8 +3,8 @@
     <nav>
             <ul class="list-group list-group-horizontal">
                 <li class="list-group-item"><a href="#">Home</a></li>
-                <li class="list-group-item"><a href="#">About</a></li>
-                <li class="list-group-item"><a href="#">Contact</a></li>
+                <li class="list-group-item"><a href="/about">About</a></li>
+                <li class="list-group-item"><a href="owners">Owners</a></li>
             </ul>
         </nav>
   </nav>
