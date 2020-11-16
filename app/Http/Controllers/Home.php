@@ -16,6 +16,7 @@ class Home extends Controller
         } else {
         $greeting = 'Good afternoon, welcome to our site';
         }
+        
         return view("welcome", ["greeting" => $greeting]);
     }
 }

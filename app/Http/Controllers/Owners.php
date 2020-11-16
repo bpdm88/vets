@@ -11,6 +11,7 @@ class Owners extends Controller
     {
         return view("owners/index", [
             "owners" => Owner::all(), 
+            // "owners" => Owner::where('address_2', '=', 'london')->get(),
         ]);
 
     }
