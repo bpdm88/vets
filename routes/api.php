@@ -19,12 +19,25 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-route::get('owners', [Owners::class, 'index']); // GET /api/owners
+// route::get('owners', [Owners::class, 'index']); // GET /api/owners
 
-route::get('owners/{owner}', [Owners::class, 'show']); // GET /api/owners/{owner}
+// route::get('owners/{owner}', [Owners::class, 'show']); // GET /api/owners/{owner}
 
-route::delete("owners/{owner}", [Owners::class, 'destroy']); // DELETE /api/owners/{owner}
+// route::delete("owners/{owner}", [Owners::class, 'destroy']); // DELETE /api/owners/{owner}
 
-route::post('owners', [Owners::class, 'store']); // POST /api/owners
+// route::post('owners', [Owners::class, 'store']); // POST /api/owners
 
-route::put('owners/{owner}', [Owners::class, 'update']); // PUT /api/owners/{owner}
+// route::put('owners/{owner}', [Owners::class, 'update']); // PUT /api/owners/{owner}
+
+Route::group(["prefix" => "owners"], function() {
+
+    Route::get('', [Owners::class, 'index']); // GET /api/owners
+    Route::post('', [Owners::class, 'store']); // POST /api/owners
+
+    Route::group(["prefix" => "{owner}"], function() {
+        
+        Route::get("", [Owners::class, "show"]); // GET /api/owners/{owner}
+        Route::put("", [Owners::class, "update"]); // PUT /api/owners/{owner}
+        Route::delete("", [Owners::class, "destroy"]); // DELETE /api/owners/{owner}
+    });
+});
