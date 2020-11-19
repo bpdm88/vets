@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\API\AnimalRequest;
 use App\Models\Owner;
 use App\Models\Animal;
 use App\Http\Resources\API\AnimalResource;
@@ -26,7 +26,7 @@ class Animals extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Owner $owner)
+    public function store(AnimalRequest $request, Owner $owner)
     {
         $data = $request->only(["name", "type", "date_of_birth", "weight_kg", "height_metres", "biteyness"]); // just gets these fields for data
 
@@ -57,7 +57,7 @@ class Animals extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Owner $owner, Animal $animal)
+    public function update(AnimalRequest $request, Owner $owner, Animal $animal)
     {
         $data = $request->all();
         $animal->fill($data)->save();

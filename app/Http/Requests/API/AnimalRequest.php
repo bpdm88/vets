@@ -29,7 +29,9 @@ class AnimalRequest extends FormRequest
             "date_of_birth"=> ["required", "string"],
             "weight_kg"=> ["required", "integer"],
             "height_metres"=> ["required", "integer"],
-            "biteyness"=> ["required", "string"]
+            "biteyness"=> ["required", "string"],
+            "treatments"=> ["nullable", "array"],
+            "treatments.*"=> ["string", "max:30"]
         ];
     }
 }
