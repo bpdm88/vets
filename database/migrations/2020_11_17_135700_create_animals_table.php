@@ -22,7 +22,6 @@ class CreateAnimalsTable extends Migration
             $table->float("weight_kg");
             $table->float("height_metres");
             $table->enum("biteyness", [1, 2, 3, 4, 5])->nullable();
-
             $table->foreignId("owner_id")->constrained()->onDelete("cascade");
         });
     }
