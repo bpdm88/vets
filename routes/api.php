@@ -21,7 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::group(["prefix" => "owners"], function() {
+Route::group(["prefix" => "owners", "middleware" => ["auth:api"]], function() {
 
     Route::get('', [Owners::class, 'index']); // GET /api/owners
     Route::post('', [Owners::class, 'store']); // POST /api/owners

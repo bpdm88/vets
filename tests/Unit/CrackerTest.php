@@ -34,16 +34,16 @@ class CrackerTest extends TestCase
 
     public function test4()
     {
-        $this->assertSame("b a", $this->cracker->decrypt(") !")); // tests for spaces 
+        $this->assertSame("b a", $this->cracker->decrypt(") !")); // tests for spaces & dictionary
     }
 
     public function test5()
     {
-        $this->assertSame("ben m", $this->cracker->decrypt(").c b")); // tests for full dictionary
+        $this->assertSame("ben m", $this->cracker->decrypt(").c b")); // tests for part dictionary
     }
 
     public function testFull()
     {
-        $this->assertSame("hello mum", $this->cracker->decrypt("&.aad bjb"));
+        $this->assertSame("hello mum", $this->cracker->decrypt("&.aad bjb")); // tests for full dictionary
     }
 }

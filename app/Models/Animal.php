@@ -25,7 +25,7 @@ class Animal extends Model
 
     public function setTreatments (array $strings) : Animal // accept an array of strings in 
     {
-        $treatments = Treatment::fromStrings($strings); // use Tag::fromStrings method to turn into a collection
+        $treatments = Treatment::fromStrings($strings); // use Treatment::fromStrings method from the Treatment model which turns it to a collection
         $this->treatments()->sync($treatments->pluck("id")); //sync method on Animal model to add any new treatments or remove unused ones
         return $this;
     }
